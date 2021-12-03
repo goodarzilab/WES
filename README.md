@@ -1,7 +1,7 @@
 # WES
 A Whole Exome Sequencing (WES) analysis workflow
 ## Steps to install GATK
-### 1. Download `gatk-4.x.x.zip` file from this Link- https://github.com/broadinstitute/gatk/releases
+### 1. Download `gatk-4.x.x.zip` file from [this link](https://github.com/broadinstitute/gatk/releases)
 ```bash
 wget https://github.com/broadinstitute/gatk/releases/download/4.2.3.0/gatk-4.2.3.0.zip
 ```
