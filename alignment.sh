@@ -4,6 +4,8 @@ sample=${INbam/.bam/}
 # If mean read length is less than 70bp: DO SOMETING ELSE!!
 # bwa mem -t 8 -T 0 -R <read_group> <reference> <fastq_1.fq.gz> <fastq_2.fq.gz> | samtools view -Shb -o <output.bam> -
 
+# bam file from xenofiltering output should be the initial bam for this script
+
 1. correct bam header and write it to a temp bam files 
 samtools view -@ 10 -Shb -o ${sample}.temp1.bam $INbam
 
