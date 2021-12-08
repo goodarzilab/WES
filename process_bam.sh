@@ -29,11 +29,13 @@ for INbam in ${bamDIR}/*.bam; do
 
     # 5. Add headers to bam file
     gatk AddOrReplaceReadGroups I=$${sample_id}/{sample_id}.dups.bam O=${sample_id}/{sample_id}.out.bam RGID=4 RGLB=lib1 RGPL=illumina RGPU=unit1 RGSM=20
-    # remove temp files
-    rm -v ${sample_id}/{sample_id}.temp1.bam
-    rm -v ${sample_id}/{sample_id}.sort.bam
-    rm -v ${sample_id}/{sample_id}.merge.bam
-    rm -v ${sample_id}/{sample_id}.dups.bam
+    
 done
 
 multiqc ${sample_id}/ -n mutiqc-${sample_id}
+
+# remove temp files
+rm -v */*.temp1.bam
+rm -v */*.sort.bam
+rm -v */*.merge.bam
+rm -v */*.dups.bam
