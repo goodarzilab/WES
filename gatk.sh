@@ -1,6 +1,6 @@
 sampleid=$1
 
-mkdir ${sampleid}_sample
+mkdir ${sampleid}sample
 # this directory for each sample should have fastq files and bam files after xenofiltering
 # all outputs are made in the same folder 
 
