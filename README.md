@@ -30,3 +30,21 @@ creates necessary reference files for next steps
 ```bash
 gatk CreateSequenceDictionary R=hg38.fa O=hg38.dict
 ``` 
+## Steps to download SnpEff
+
+### 1. Download latest version
+```bash
+wget https://snpeff.blob.core.windows.net/versions/snpEff_latest_core.zip
+```
+### 2. Unzip file
+```bash
+unzip snpEff_latest_core.zip
+```
+### 3. Configure
+```bash
+export PATH=$PATH:/path/to/snpEff/
+```
+### 4. Download Reference Database
+```bash
+ java -jar ./snpEff/snpEff.jar download GRCh38.99
+```
