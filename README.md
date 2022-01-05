@@ -25,3 +25,8 @@ source ~/.bashrc
 ```bash
 gatk info
 ```
+## Use GATK 
+creates necessary reference files for next steps
+```bash
+gatk CreateSequenceDictionary R=hg38.fa O=hg38.dict
+``` 
