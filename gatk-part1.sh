@@ -33,17 +33,4 @@ gatk CollectInsertSizeMetrics \
   O=${sampleid}/${sampleid}.insert_metrics.txt \
   H=${sampleid}/${sampleid}.insert_size_histogram.pdf
 
-#input is reference and updated bam and first data table, output is bam file of recalibrated reads
-gatk ApplyBQSR \
-  -R $genome_fa \
-  -I ${sampleid}/${sampleid}.ctags.bam \
-  -bqsr ${sampleid}/${sampleid}.recal_data.table \
-  -O ${sampleid}/${sampleid}.recal_reads.bam 
-
-#input is reference and updated bam and first data table, output is bam file of recalibrated reads
-gatk ApplyBQSR -R $genome_fa \
-  -I ${sampleid}/${sampleid}.ctags.bam \
-  -bqsr ${sampleid}/${sampleid}.recal_data.table \
-  -O ${sampleid}/${sampleid}.recal_reads.bam 
-
 samtools depth -a ${sampleid}/${sampleid}.ctags.bam  > ${sampleid}/${sampleid}.depth_out.txt
