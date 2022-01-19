@@ -34,3 +34,5 @@ gatk CollectInsertSizeMetrics \
   H=${sampleid}/${sampleid}.insert_size_histogram.pdf
 
 samtools depth -a ${sampleid}/${sampleid}.ctags.bam  > ${sampleid}/${sampleid}.depth_out.txt
+
+samtools index ${sampleid}/${sampleid}.ctags.bam
