@@ -30,10 +30,10 @@ gatk CollectAlignmentSummaryMetrics  \
 #input is updated bam file, output is metrics file and histogram plots
 # change the minimum parameter to 0 because it was not working with 0.05
 gatk CollectInsertSizeMetrics \
+  M=0 \
   I=${sampleid}/${sampleid}.ctags.bam  \
   O=${sampleid}/${sampleid}.insert_metrics.txt \
   H=${sampleid}/${sampleid}.insert_size_histogram.pdf 
-  M=0
 
 samtools depth -a ${sampleid}/${sampleid}.ctags.bam  > ${sampleid}/${sampleid}.depth_out.txt
 
