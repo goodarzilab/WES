@@ -1,11 +1,12 @@
 library("XenofilteR")
 
-bp.param <- SnowParam(workers = 10, type = "SOCK")
-
 args <- commandArgs(trailingOnly = TRUE)
 
 samplelist <- args[1]
 inputFolder <- args[2]
+JOBS <- args[3]
+
+bp.param <- SnowParam(workers = JOBS, type = "SOCK")
 
 sample.list <- read.csv(samplelist, header = FALSE)
 
