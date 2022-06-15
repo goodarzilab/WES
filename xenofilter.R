@@ -5,6 +5,15 @@ args <- commandArgs(trailingOnly = TRUE)
 samplelist <- args[1]
 inputFolder <- args[2]
 JOBS <- args[3]
+align_mouse = args[4]
+align_human = args[5]
+
+# make a dataframe/table with these two lists
+list.files(pattern='*.mm10.srt.bam$',path=align_mouse,full.names = TRUE, recursive=T)
+
+list.files(pattern='*.hg38.srt.bam$',path=align_human,full.names = TRUE, recursive=T)
+
+# figure out how to create a table with two lists
 
 bp.param <- SnowParam(workers = JOBS, type = "SOCK")
 
