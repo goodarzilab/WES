@@ -1,15 +1,22 @@
 library("XenofilteR")
 
-args <- commandArgs(trailingOnly = TRUE)
+#args <- commandArgs(trailingOnly = TRUE)
 
-align_mouse = args[1]
-pattern_mouse = args[2] # *.mm10.srt
+#align_mouse = args[1]
+#pattern_mouse = args[2] # *.mm10.srt
 
-align_human = args[3]
-pattern_human = args[4] # *.hg38.srt
+#align_human = args[3]
+#pattern_human = args[4] # *.hg38.srt
 
-xenofilterDir = args[5]
-JOBS <- args[6]
+#xenofilterDir = args[5]
+#JOBS <- args[6]
+
+JOBS = 10
+align_human = "align_human"
+align_mouse = "align_mouse"
+pattern_human = ".human.srt"
+pattern_mouse = ".mouse"
+xenofilterDir = "align_xenofilter"
 
 bp.param <- SnowParam(workers = JOBS, type = "SOCK")
 
