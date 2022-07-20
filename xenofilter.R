@@ -1,22 +1,20 @@
-library("XenofilteR")
+suppressMessages(suppressWarnings(library (XenofilteR)))
+message ('XenofilteR loaded!')
 
-#args <- commandArgs(trailingOnly = TRUE)
+args <- commandArgs(trailingOnly = TRUE)
 
-#align_mouse = args[1]
-#pattern_mouse = args[2] # *.mm10.srt
+align_human = args[1]
+pattern_human = args[2] # *.hg38.srt
+align_mouse = args[3]
+pattern_mouse = args[4] # *.mm10.srt
 
-#align_human = args[3]
-#pattern_human = args[4] # *.hg38.srt
+JOBS <- args[5]
 
-#xenofilterDir = args[5]
-#JOBS <- args[6]
-
-JOBS = 10
-align_human = "align_human"
-align_mouse = "align_mouse"
-pattern_human = ".human.srt"
-pattern_mouse = ".mouse"
-xenofilterDir = "align_xenofilter"
+#JOBS = 10
+#align_human = "test"#"align_human"
+#align_mouse = "test"#"align_mouse"
+#pattern_human = ".hg38.srt"
+#pattern_mouse = ".mm10.srt"
 
 bp.param <- SnowParam(workers = JOBS, type = "SOCK")
 
@@ -29,12 +27,12 @@ sample.list <- data.frame(
 	mouse=list.files(pattern=paste0(pattern_mouse,'.bam$'),path=align_mouse,full.names = TRUE, recursive=T)
 )
 
-output.names <- gsub(paste0(pattern_human,'.bam$'), '.xenofilter.bam', sample.list$human)
+output.names <- gsub(paste0(pattern_human,'.bam$'), '.bam', sample.list$human)
 output.names <- gsub(align_human, '/', output.names)
 
 XenofilteR(
            sample.list, 
-           destination.folder = xenofilterDir, 
+           destination.folder = './', 
            bp.param = bp.param, 
            output.names,
            MM_threshold = 12, 
