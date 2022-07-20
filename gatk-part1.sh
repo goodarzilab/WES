@@ -3,6 +3,8 @@ bam_file=$1
 sampleid=$2
 genome_fa=$3
 
+RAM=20
+
 mkdir ${sampleid}
 # this directory for each sample should have fastq files and bam files after xenofiltering
 # all outputs are made in the same folder 
