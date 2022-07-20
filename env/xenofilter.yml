@@ -1,0 +1,10 @@
+name: xenofilter
+channels:
+  - defaults
+  - anaconda
+  - r
+  - bioconda
+  - conda-forge
+dependencies:
+  - bioconductor-iranges=2.20
+  - bioconductor-genomicalignments=1.22
