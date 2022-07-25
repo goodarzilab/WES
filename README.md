@@ -22,7 +22,7 @@ mv Filtered_bams/XenofilteR.log xenofilter.log
 
 mkdir align_xenofilter
 for f in Filtered_bams/*; 
-	do b=`basename $f`; o=${b/_Filtered.bam/xenofilter.bam}; 
+	do b=`basename $f`; o=${b/_Filtered.bam/.xenofilter.bam}; 
 	mv -v $f align_xenofilter/$o; 
 done
 
